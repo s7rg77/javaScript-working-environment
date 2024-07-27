@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desarrollo web entorno cliente</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: black;
+            color: #00FF00;
+            font-family: monospace;
+            font-size: 16px;
+        }
+
+        h1,
+        h2 {
+            margin-left: 10px;
+            color: #FFFFFF;
+            font-weight: normal;
+        }
+
+        #head {
+            margin-right: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .home,
+        .doc,
+        .git {
+            margin-top: 10px;
+            width: 100px;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid #006400;
+            background-color: #006400;
+            color: #00FF00;
+            cursor: pointer;
+        }
+
+        .hello {
+            color: white;
+            font-size: large;
+            position: absolute;
+        }
+
+        footer {
+            background-color: #006400;
+            color: #00FF00;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">
+        <button class="doc" onclick="goDoc()">doc</button>
+        <button class="git" onclick="goGit()">git</button>
+        <button class="home" onclick="goHome()">back</button>
+    </div>
+    <h1>javaScript working environment</h1>
+    <h2>sergio lópez</h2>
+    <p>fecha actual:
+    <p id="actualDate"></p>
+    </p>
+    <button onclick="showHello()">púlsame varias veces</button>
+    <div id="helloContainer"></div>
+    <script>
+        var today = new Date();
+        var date = document.getElementById('actualDate');
+
+        date.textContent = today.toLocaleDateString();
+
+        alert("javaScript working environment");
+
+        function showHello() {
+
+            var helloContainer = document.getElementById('helloContainer');
+            var newHello = document.createElement('div');
+
+            newHello.textContent = "hola!";
+            newHello.className = 'hello';
+
+            var maxX = window.innerWidth - 100;
+            var maxY = window.innerHeight - 100;
+
+            newHello.style.left = Math.floor(Math.random() * maxX) + 'px';
+            newHello.style.top = Math.floor(Math.random() * maxY) + 'px';
+            newHello.style.display = 'block';
+
+            helloContainer.appendChild(newHello);
+
+        }
+
+        function goHome() {
+
+            window.location.href = '/';
+
+        }
+
+        function goGit() {
+
+            window.location.href = 'https://github.com/s7rg77/javaScript-working-environment';
+
+        }
+
+        function goDoc() {
+
+            window.location.href = '/doc';
+
+        }
+    </script>
+</body>
+
+<footer>
+    <h3>desarrollo web entorno cliente</h3>
+</footer>
+
+</html>
