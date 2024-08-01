@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javaScript working environment</title>
     <style>
+        html,
         body {
             margin: 0px;
             padding: 0px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
             background-color: black;
             color: #00FF00;
             font-family: monospace;
@@ -22,16 +29,21 @@
             font-weight: normal;
         }
 
-        #head {
+        header {
+            margin-top: 10px;
             margin-right: 10px;
             display: flex;
             justify-content: flex-end;
         }
 
+        main {
+            margin-bottom: 10px;
+            flex: 1;
+        }
+
         .home,
         .doc,
         .git {
-            margin-top: 10px;
             width: 100px;
         }
 
@@ -55,29 +67,35 @@
         }
 
         footer {
-            bottom: 0px;
             width: 100%;
             background-color: #006400;
             color: #00FF00;
             text-align: center;
-            position: fixed;
         }
     </style>
 </head>
 
 <body>
-    <div id="head">
+    <header>
         <button class="doc" onclick="goDoc()">doc</button>
         <button class="git" onclick="goGit()">git</button>
         <button class="home" onclick="goHome()">back</button>
-    </div>
-    <h1>javaScript working environment</h1>
-    <h2>sergio lópez</h2>
-    <p>fecha actual:
-    <p id="actualDate"></p>
-    </p>
-    <button onclick="showHello()">púlsame varias veces</button>
-    <div id="helloContainer"></div>
+    </header>
+
+    <main>
+        <h1>javaScript working environment</h1>
+        <h2>sergio lópez</h2>
+        <p>fecha actual:
+        <p id="actualDate"></p>
+        </p>
+        <button onclick="showHello()">púlsame varias veces</button>
+        <div id="helloContainer"></div>
+    </main>
+
+    <footer>
+        <h3>desarrollo web entorno cliente</h3>
+    </footer>
+
     <script>
         var today = new Date();
         var date = document.getElementById('actualDate');
@@ -124,9 +142,5 @@
         }
     </script>
 </body>
-
-<footer>
-    <h3>desarrollo web entorno cliente</h3>
-</footer>
 
 </html>
